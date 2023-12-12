@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="bec263f6-f88d-4ce5-a889-7bd976db69cc" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="koushikFlow" doc:id="e0bac4d9-a4a0-47e8-ae59-565448b1a561" >
+		<http:listener doc:name="Listener" doc:id="81def6db-6a99-4e4c-aff8-63731b56ba3e" config-ref="HTTP_Listener_config" path="/mn"/>
+		<logger level="INFO" doc:name="Logger" doc:id="381efdb5-706b-4dc4-a14c-bf1a1aa3d05f" message="request recived"/>
+	</flow>
+</mule>
